@@ -75,3 +75,16 @@ class ChangeTheme(object):
     light_theme = (By.XPATH, '//input[@name="recurrentMove" and @value="LIGHT"]')
 
 
+class CheckNotification(object):
+    notification_button = (By.XPATH, '//button[@title="Notifications"]')
+    notification_menu = (By.XPATH, '//div[@class="NotificationsMenu"]')
+    notification_updates_button = (By.XPATH, '//button//span[text()= "Updates"]')
+
+class AddSelectionFeature(object):
+    collapse_shortcut_button = (By.XPATH, '//button[@class="AppSidebarCallapseButtonsBox" and @aria-label="Collapse shortcuts"]')
+    list_item = (By.XPATH, '//div[text()="My Shopping List"]')
+    more_options_icon = (By.XPATH, '//button[@aria-label="More options"]')
+    mutiple_selection_button = (By.XPATH, '//button[@class="TasksToolBarSettings__item__button" and text()="Multiple selection (B)"]')
+    taskbatchtoolbar = (By.XPATH, '//div[@class="TaskBatchToolbar"]')
+    task_selected_items_count = (By.XPATH, '//div[@class="TaskBatchToolbar__badge__text"]')
+    task_list_container = (By.XPATH, '//div[@class="TaskListTarget"]')
