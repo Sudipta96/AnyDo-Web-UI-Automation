@@ -16,7 +16,8 @@ def init_driver(request):
         driver = webdriver.Firefox()
         print("Launching firefox browser.........")
     request.cls.driver = driver
-    driver.implicitly_wait(10)
+    driver.maximize_window()
+    driver.implicitly_wait(20)
     yield
     driver.close()
     # return driver

@@ -38,5 +38,40 @@ class CreateTaskLocators(object):
     
     enter_notes_input =  (By.XPATH, '/html/body/div[3]/div/div/div[3]/form/section/div/div/div/div[1]/div/div[2]/div[2]/div/div/textarea')
     next_week_button = (By.XPATH, '/html/body/div[3]/div/div/div[3]/form/section/div/div/div/div[3]/div[2]/div[2]/button[3]')
-                                   
-        
+
+class CreateSubTaskLocators(object):
+    task_item = (By.XPATH, '//*[@id="root"]/div[2]/div[3]/div/section/div/article[1]/div/div[3]/article/div/div/div/div/div/div[1]/div[1]/div[1]')
+                        #    '//*[@id="root"]/div[2]/div[3]/div/section/div/article[1]/div/div[3]/article/div/div/div/div/div/div[1]/div[2]/div'
+                        
+    subtask_btn = (By.XPATH, '/html/body/div[6]/div/div/div[3]/div/div/article/div/div/div/div/div/div[1]/div/div/div/div/div/div/div[6]/div/article/button/div/div[2]')
+    # add_subtask_input = (By.XPATH,'/html/body/div[6]/div/div/div[3]/div/div/article/div/div/div/div/div/div[1]/div/div/div/div/div/div/div[6]/div/article/div/div/div[1]/input')
+    subtask_item = (By.XPATH, '/html/body/div[6]/div/div/div[3]/div/div/article/div/div/div/div/div/div[1]/div/div/div/div/div/div/div[6]/div/article/div/div/div[1]/input')
+    # subtask_main = (By.CSS_SELECTOR, 'body > div.js-Portal.portal-default > div > div > div:nth-child(3) > div > div > article > div > div > div > div > div > div.TabsTab.TabsTab--active.TabsTab--fullHeight > div > div > div > div > div > div > div.TaskEditPaneDetails__subTasks.TaskEditPaneDetails__fullRow > div > article > div > div > div.SubTaskItem__mainContent')
+    # add_subtask_input = (By.XPATH, '//input[@class="SubTaskItem__textField fs-hide"]')
+    add_subtask_input  = (By.XPATH, '//div[@class="NewSubTaskItem"]')
+                                        #    NewSubTaskItem__textField fs-hide
+                                     
+
+class CreateListLocators(object):
+    add_list_icon = (By.XPATH, '//*[@id="root"]/div[2]/div[1]/div[3]/nav/ul/li[3]/div[1]/div[2]/div/button[2]')
+    add_list_input = (By.XPATH, '//textarea[@name="category-name"]')
+                                 
+    create_list_button = (By.XPATH, '/html/body/div[3]/div/div/div[3]/form/section/footer/div/div/button[2]')
+    list_item = (By.XPATH, '//*[@id="root"]/div[2]/div[1]/div[3]/nav/ul/li[3]/div[2]/ul/li[4]')
+    list_category = (By.XPATH, '//*[@id="root"]/div[2]/div[1]/div[3]/nav/ul/li[3]/div[2]/ul')
+                                # //*[@id="root"]/div[2]/div[1]/div[3]/nav/ul/li[3]/div[2]/ul
+
+class AddItemToList(object):
+    collapse_shortcut_icon = (By.XPATH, '//button[@class="AppSidebarCallapseButtonsBox" and @aria-label="Collapse shortcuts"]')
+    listname = (By.XPATH, '//div[text()="My Shopping List"]')
+                        #    //*[@id="root"]/div[2]/div[1]/div[3]/nav/ul/li[3]/div[2]/ul/li[6]/a/div[2]
+    add_task_input = (By.XPATH, '//input[@class="PaneFooterTextField__input fs-hide" and @maxlength="1000"]')
+    list_items_box = (By.XPATH, '//div[@class="TaskListTarget"]')
+
+class ChangeTheme(object):
+    settings_icon = (By.XPATH, '//button[@aria-label="Settings"]')
+    theme_button = (By.XPATH, "//div[text()='Theme']")
+    dark_theme = (By.XPATH, '//input[@name="recurrentMove" and @value="DARK"]')
+    light_theme = (By.XPATH, '//input[@name="recurrentMove" and @value="LIGHT"]')
+
+

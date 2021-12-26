@@ -28,6 +28,10 @@ class BasePage(object):
         element = self.find_element(*locator)
         hover = ActionChains(self.driver).move_to_element(element)
         hover.perform()
+    
+    def zoom_out_window(self):
+        self.driver.execute_script("document.body.style.zoom='90%'")
+        print("zoom out called...")
 
     def wait_element(self, *locator):
         try:
