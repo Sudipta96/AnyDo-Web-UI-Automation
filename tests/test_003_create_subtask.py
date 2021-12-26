@@ -1,9 +1,6 @@
-import pytest
-from selenium import webdriver
 from pages.login_page import LoginPage
 from pages.create_subtask import CreateSubTaskPage 
 from tests.base_test import BaseTest
-from utils.readProperties import ReadConfig
 from utils.customLogger import LogGeneration
 from configurations.config import TestData, Test_Data_003
 import time 
@@ -30,11 +27,23 @@ class Test_003_Create_SubTask(BaseTest):
         time.sleep(5)
         self.create_subtask_obj = CreateSubTaskPage(self.driver)
         
-        self.create_subtask_obj.get_task_item(self.taskname)
+        self.create_subtask_obj.click_next_week_button()
+        time.sleep(3)
+        
+        self.create_subtask_obj.click_task_item()
+        
+        time.sleep(2)
+    
+        self.create_subtask_obj.scroll_task_dialog()
+        
+        time.sleep(3)
+
         self.create_subtask_obj.click_add_subtask_button()
         time.sleep(2)
+
         self.create_subtask_obj.enter_subtask(self.subtask_name)
         time.sleep(5)
+    
         subtask = self.create_subtask_obj.subtask_item_visible()
 
         print(subtask)

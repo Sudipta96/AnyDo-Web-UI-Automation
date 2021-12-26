@@ -3,7 +3,6 @@ from configurations.config import TestData
 from pages.login_page import LoginPage
 from pages.add_selection_feature import AddSelectionFeaturePage 
 from utils.customLogger import LogGeneration
-from selenium.webdriver.common.keys import Keys
 import time 
 
 

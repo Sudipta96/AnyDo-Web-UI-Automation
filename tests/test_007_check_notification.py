@@ -3,7 +3,6 @@ from configurations.config import TestData
 from pages.login_page import LoginPage
 from pages.check_notification_page import CheckNotificationPage
 from utils.customLogger import LogGeneration
-from selenium.webdriver.common.keys import Keys
 import time 
 
 

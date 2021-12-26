@@ -1,9 +1,7 @@
-import pytest
-from selenium import webdriver
 from pages.login_page import LoginPage
 from pages.create_tasknotes_page import CreateTaskNotesPage
+from pages.create_task_page import CreateTaskPage
 from tests.base_test import BaseTest
-from utils.readProperties import ReadConfig
 from utils.customLogger import LogGeneration
 from configurations.config import TestData, Test_Data_002
 import time 
@@ -28,13 +26,15 @@ class Test_002_Create_TaskNotes(BaseTest):
         self.logger.info("****Login successfull ****")
 
         self.logger.info("****Started creating task ****")
-        self.create_task_obj = CreateTaskNotesPage(self.driver)
+        self.create_task_obj = CreateTaskPage(self.driver)
         self.create_task_obj.click_create_task_btn()
         self.create_task_obj.enter_task_name(self.taskname)
 
-        self.create_task_obj.enter_notes_name(self.notes_name)
+        self.create_note_obj = CreateTaskNotesPage(self.driver)
+
+        self.create_note_obj.enter_notes_name(self.notes_name)
         time.sleep(2)
-        self.create_task_obj.click_next_week_button()
+        self.create_note_obj.click_next_week_button()
         time.sleep(2)
         self.create_task_obj.click_add_task_btn()
         time.sleep(5)
@@ -46,5 +46,5 @@ class Test_002_Create_TaskNotes(BaseTest):
             assert True
         else:
             self.logger.error("*****Create Task Test failed******")
-            self.save_screenshot("test_create_task.png")
+            self.save_screenshot("test_create_tasknotes.png")
             assert False

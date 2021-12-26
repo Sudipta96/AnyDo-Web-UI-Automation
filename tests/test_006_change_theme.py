@@ -1,20 +1,17 @@
 from tests.base_test import BaseTest
-from configurations.config import TestData, Test_Data_005
+from configurations.config import TestData
 from pages.login_page import LoginPage
 from pages.change_theme_page import ChangeThemePage
 from utils.customLogger import LogGeneration
-from selenium.webdriver.common.keys import Keys
 import time 
 
 
-class Test_005_AddItemsToList(BaseTest):
+class Test_005_ChangeTheme(BaseTest):
     username = TestData.username
     password = TestData.password
-    listname = Test_Data_005.listname
-    list_items = Test_Data_005.list_items
     logger= LogGeneration.loggen()
 
-    def test_add_items_to_list(self):
+    def test_change_theme(self):
         self.logger.info("*****Add Items To List Test******")
 
         self.logger.info("****Login process initializing ****")

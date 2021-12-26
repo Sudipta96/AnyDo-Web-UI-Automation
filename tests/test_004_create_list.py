@@ -30,8 +30,7 @@ class Test_004_Create_List(BaseTest):
         self.create_list_obj.click_create_list_button()
         time.sleep(2)
         assert self.create_list_obj.does_list_item_created(self.listname)
-        # assert True
-        # self.logger.info("**** Test Create List passed******")
+        self.logger.info("**** Test Create List passed******")
         
 
 

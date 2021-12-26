@@ -23,18 +23,12 @@ class ChangeThemePage(BasePage):
         self.find_element(*self.locator.light_theme).click()
 
     def dark_theme_is_selected(self):
-        print("----does dark theme enabled")
         element = self.find_element(*self.locator.dark_theme)
-        print(element.is_selected())
-        print("----does dark theme end")
         return element.is_selected()
 
     
     def light_theme_is_selected(self):
-        print("----does light theme enabled")
         element = self.find_element(*self.locator.light_theme)
-        print(element.is_selected())
-        print("----light theme end")
         return element.is_selected()
 
     

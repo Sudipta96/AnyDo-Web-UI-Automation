@@ -1,7 +1,6 @@
 from utils.locators import *
 from pages.base_page import BasePage
-from selenium.webdriver.common.keys import Keys 
-import time
+
 
 
 class CheckNotificationPage(BasePage):

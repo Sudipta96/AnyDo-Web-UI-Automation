@@ -1,8 +1,6 @@
-import pytest
 from pages.login_page import LoginPage
 from pages.create_task_page import CreateTaskPage
 from tests.base_test import BaseTest
-from utils.readProperties import ReadConfig
 from utils.customLogger import LogGeneration
 from configurations.config import TestData, Test_Data_001
 import time 

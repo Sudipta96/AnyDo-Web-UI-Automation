@@ -1,8 +1,11 @@
 class TestData:
     baseURL = "https://desktop.any.do/"
     username = "wepixa3224@swsguide.com"
-    # useremail=wepixa344@swsguide.com
     password = "testing321"
+
+    # 2nd account:
+    # username = wepixa344@swsguide.com
+    # password = "testing321"
 
 
 class Test_Data_001:
@@ -22,5 +25,11 @@ class Test_Data_004:
 class Test_Data_005:
     listname = "My Shopping List"
     list_items = ['T-shirt', 'Pant', 'Mouse', 'KeyBoard']
+
+class Test_Data_009:
+    homepage_url = 'https://desktop.any.do/agenda'
+
+class Test_Data_010:
+    sign_in_page_title = 'Sign in to Any.do'
 
 

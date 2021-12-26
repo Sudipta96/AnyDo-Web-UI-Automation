@@ -17,7 +17,6 @@ class AddItemsToListPage(BasePage):
     def click_list_item(self):
         element = self.find_element(*self.locator.listname)
         self.driver.execute_script("arguments[0].click();", element)
-        # self.find_element(*self.locator.listname).click()
     
     def enter_taskname(self, task_list):
         for item in task_list:
@@ -30,30 +29,11 @@ class AddItemsToListPage(BasePage):
         print("check items_visibility() called...")
         flag = False
         list_items_box = self.find_element(*self.locator.list_items_box)
-        # list_items = list_items_box.find_elements('div')
-        print(list_items_box.text)
         for item in task_list:
             if item in list_items_box.text:
                 flag = True
         return flag
     
-    # def enter_list_name(self, listname):
-    #     self.wait_element(*self.locator.add_list_input)
-    #     self.find_element(*self.locator.add_list_input).clear()
-    #     self.find_element(*self.locator.add_list_input).send_keys(listname)
-    
-    # def click_create_list_button(self):
-    #     self.find_element(*self.locator.create_list_button).click()
-    
-    # def does_list_item_created(self, listname):
-    #     list_category = self.find_element(*self.locator.list_category)
-    #     list_items =  list_category.find_elements(By.TAG_NAME, "li")
-    #     flag = False
-    #     for item in list_items:
-    #         if listname == item.text:
-    #             flag = True
-    #     return flag
-
 
     
 

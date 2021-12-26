@@ -1,22 +1,17 @@
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+from configurations.config import TestData
 
 
-# this Base class is serving basic attributes for every single page inherited from Page class
-class BasePage(object):
-    def __init__(self, driver, base_url='https://desktop.any.do/'):
+class BasePage:
+    def __init__(self, driver, base_url=TestData.baseURL):
         self.base_url = base_url
         self.driver = driver
-        self.timeout = 30
+    
 
-    def find_element(self, *locator):
-        return self.driver.find_element(*locator)
-
-    def open(self, url):
-        url = self.base_url + url
-        self.driver.get(url)
+    def find_element(self, *by_locator):
+        return self.driver.find_element(*by_locator)
 
     def get_title(self):
         return self.driver.title
@@ -24,18 +19,15 @@ class BasePage(object):
     def get_url(self):
         return self.driver.current_url
 
-    def hover(self, *locator):
-        element = self.find_element(*locator)
-        hover = ActionChains(self.driver).move_to_element(element)
-        hover.perform()
-    
     def zoom_out_window(self):
         self.driver.execute_script("document.body.style.zoom='90%'")
-        print("zoom out called...")
+    
+    def zoom_in_window(self):
+        self.driver.execute_script("document.body.style.zoom='100%'")
 
-    def wait_element(self, *locator):
+    def wait_element(self, *by_locator):
         try:
-            WebDriverWait(self.driver, 20).until(EC.presence_of_element_located(locator))
+            WebDriverWait(self.driver, 20).until(EC.presence_of_element_located(by_locator))
         except TimeoutException:
-            print("\n * ELEMENT NOT FOUND WITHIN GIVEN TIME! --> %s" %(locator[1]))
+            print("ELEMENT IS NOT FOUND WITHIN GIVEN TIME")
             self.driver.quit()

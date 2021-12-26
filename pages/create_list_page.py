@@ -4,7 +4,6 @@ from pages.base_page import BasePage
 
 
 class CreateListPage(BasePage):
-
     def __init__(self, driver):
         self.locator = CreateListLocators
         super(CreateListPage, self).__init__(driver)

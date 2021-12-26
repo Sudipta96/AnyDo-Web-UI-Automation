@@ -1,7 +1,5 @@
 from utils.locators import *
 from pages.base_page import BasePage
-from pages.add_items_to_list import AddItemToList
-from selenium.webdriver.common.keys import Keys 
 import time
 
 
