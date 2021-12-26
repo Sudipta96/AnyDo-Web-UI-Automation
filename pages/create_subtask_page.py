@@ -13,10 +13,16 @@ class CreateSubTaskPage(BasePage):
     def click_next_week_button(self):
         self.find_element(*self.locator.next_seven_days_button).click()
     
-    def click_task_item(self):
-        self.wait_element(*self.locator.task_item)
-        self.find_element(*self.locator.task_item).click()
 
+    def click_task_item(self, taskname):
+        print(taskname)
+        self.wait_element(*self.locator.task_list)
+        task_list = self.find_element(*self.locator.task_list)
+        items_list = task_list.find_elements(By.XPATH, '//div[@class="TaskList__taskContainer"]')
+        for item in items_list:
+            print(item.text)
+            if taskname in item.text:
+                item.click()
    
     def scroll_task_dialog(self):
         dialog = self.find_element(*self.locator.task_dialog)
@@ -25,7 +31,7 @@ class CreateSubTaskPage(BasePage):
     
     def click_add_subtask_button(self):
         self.wait_element(*self.locator.add_subtask_btn)
-        time.sleep(5)
+        time.sleep(3)
         self.find_element(*self.locator.add_subtask_btn).click()
     
     def enter_subtask(self, subtask_name):

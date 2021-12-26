@@ -29,7 +29,9 @@ class Test_001_Create_Task(BaseTest):
         self.create_task_obj.enter_task_name(self.taskname)
         self.create_task_obj.click_add_task_btn()
         time.sleep(5)
+        
         task_list = self.create_task_obj.get_task_list()
+
 
         if self.taskname in task_list:
             self.logger.info("*****Create Task Test passed******")

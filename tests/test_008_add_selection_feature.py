@@ -31,6 +31,8 @@ class Test_008_AddSelectionFeature(BaseTest):
         self.obj.click_more_option_button()
         time.sleep(2)
         self.obj.click_multiple_selection_button()
+        time.sleep(2)
+
         is_visible = self.obj.is_taskbatch_toolbar_visible()
 
         if is_visible == True:

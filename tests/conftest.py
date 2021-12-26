@@ -11,6 +11,8 @@ def init_driver(request):
     elif browser=='firefox':
         driver = webdriver.Firefox()
         print("Launching firefox browser.........")
+    else:
+        driver=webdriver.Chrome()
     request.cls.driver = driver
     driver.maximize_window()
     driver.implicitly_wait(30)

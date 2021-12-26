@@ -31,7 +31,7 @@ class Test_002_Create_TaskNotes(BaseTest):
         self.create_task_obj.enter_task_name(self.taskname)
 
         self.create_note_obj = CreateTaskNotesPage(self.driver)
-
+        
         self.create_note_obj.enter_notes_name(self.notes_name)
         time.sleep(2)
         self.create_note_obj.click_next_week_button()
@@ -39,12 +39,7 @@ class Test_002_Create_TaskNotes(BaseTest):
         self.create_task_obj.click_add_task_btn()
         time.sleep(5)
 
-        task_list = self.create_task_obj.get_task_list()
+        self.create_note_obj.click_personal_option_button()
 
-        if self.taskname in task_list:
-            self.logger.info("*****Create Task Test passed******")
-            assert True
-        else:
-            self.logger.error("*****Create Task Test failed******")
-            self.save_screenshot("test_create_tasknotes.png")
-            assert False
+        assert self.create_task_obj.is_task_added(self.taskname)
+       

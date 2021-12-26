@@ -20,10 +20,19 @@ class CreateTaskPage(BasePage):
     def click_add_task_btn(self):
         self.find_element(*self.locator.add_task_btn).click()
 
-    def get_task_list(self):
+    
+    def is_task_added(self, taskname):
+        print(taskname)
         self.wait_element(*self.locator.task_list)
-        return self.find_element(*self.locator.task_list).text
-
+        task_list = self.find_element(*self.locator.task_list)
+        items_list = task_list.find_elements(By.XPATH, '//div[@class="TaskList__taskContainer"]')
+        flag = False
+        for item in items_list:
+            print(item.text)
+            if taskname in item.text:
+                flag = True
+                break
+        return flag
     
 
 

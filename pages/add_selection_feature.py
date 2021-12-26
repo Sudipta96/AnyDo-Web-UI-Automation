@@ -30,8 +30,11 @@ class AddSelectionFeaturePage(BasePage):
     def click_items_of_task_list(self):
         task_list_container = self.find_element(*self.locator.task_list_container)
         items_list = task_list_container.find_elements(By.XPATH, '//div[@class="TaskList__taskContainer"]')
+        count = 0
         for item in items_list:
-            item.click()
+            if count % 2 == 0:
+                item.click()
+            count += 1
             time.sleep(1)
 
     def task_selected_items_count(self):

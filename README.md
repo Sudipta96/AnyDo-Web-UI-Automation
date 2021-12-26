@@ -1,4 +1,4 @@
-#AnyDo Web UI Automation with Selenium and Pytest
+# AnyDo Web UI Automation with Selenium and Pytest
 
 website link: https://desktop.any.do/
 
@@ -81,7 +81,7 @@ Step 8: To run all test parallelly specify number after '-n' arguement. Less num
 because large number will slow down the execution process.
 
 ```
-> pytest -s -v -n 2 --capture=tee-sys --html=Reports\report.html tests\test_001_create_task.py --browser chrome
+> pytest -s -v -n 2 --capture=tee-sys --html=Reports\report.html tests --browser firefox
 
 ```
 

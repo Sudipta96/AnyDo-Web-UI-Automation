@@ -1,5 +1,6 @@
 from pages.login_page import LoginPage
-from pages.create_subtask import CreateSubTaskPage 
+from pages.create_subtask_page import CreateSubTaskPage 
+from pages.create_tasknotes_page import CreateTaskNotesPage
 from tests.base_test import BaseTest
 from utils.customLogger import LogGeneration
 from configurations.config import TestData, Test_Data_003
@@ -25,12 +26,13 @@ class Test_003_Create_SubTask(BaseTest):
         self.logger.info("****Login successfull ****")
         self.logger.info("****Creating Sub Task Item****")
         time.sleep(5)
+        self.create_tasknotes_obj = CreateTaskNotesPage(self.driver)
+        time.sleep(2)
+        self.create_tasknotes_obj.click_personal_option_button()
+
         self.create_subtask_obj = CreateSubTaskPage(self.driver)
         
-        self.create_subtask_obj.click_next_week_button()
-        time.sleep(3)
-        
-        self.create_subtask_obj.click_task_item()
+        self.create_subtask_obj.click_task_item(self.taskname)
         
         time.sleep(2)
     

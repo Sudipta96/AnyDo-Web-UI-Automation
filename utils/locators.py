@@ -12,18 +12,21 @@ class CreateTaskLocators(object):
     create_task_button = (By.XPATH, '//*[@id="root"]/div[2]/div[1]/div[3]/div[2]/div/button/span[2]')
     enter_task_name_input = (By.XPATH, '/html/body/div[3]/div/div/div[3]/form/section/div/div/div/div[1]/div/div[1]/div/div/div/textarea')
     add_task_btn = (By.XPATH, '/html/body/div[3]/div/div/div[3]/form/section/footer/div/div/button')
-    task_list = (By.XPATH, '//*[@id="root"]/div[2]/div[3]/div/section/div/article[1]/div/div[1]/article/div/div/div/div/div/div[1]')
+    task_list = (By.XPATH, '//div[@class="TaskListTarget"]')
     
 
 class CreateTaskNotesLocators(object):
     enter_notes_input =  (By.XPATH, '/html/body/div[3]/div/div/div[3]/form/section/div/div/div/div[1]/div/div[2]/div[2]/div/div/textarea')
     next_week_button = (By.XPATH, '//button[text()="Next week"]')
+    personal_option_button = (By.XPATH, '//div[text()="Personal"]')
+    
 
 
 class CreateSubTaskLocators(object):
     task_dialog = (By.XPATH, '//div[@class="TaskEditPaneDetails"]')
     next_seven_days_button = (By.XPATH, '//a[@href="/tasks/next-seven-days"]')
     task_item = (By.XPATH, '//div[@class="TaskItem__title__text fs-hide" and text()="My Friday Task"]')
+    task_list = (By.XPATH, '//div[@class="TaskListTarget"]')
     
     add_subtask_btn = (By.XPATH, '//div[text()="Add a new subtask"]')
     add_subtask_input  = (By.XPATH, '//div[@class="NewSubTaskItem"]')

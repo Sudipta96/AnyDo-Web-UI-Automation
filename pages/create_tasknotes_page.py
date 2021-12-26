@@ -7,7 +7,7 @@ class CreateTaskNotesPage(BasePage):
 
     def __init__(self, driver):
         self.locator = CreateTaskNotesLocators
-        super(CreateTaskNotesPage, self).__init__(driver)  
+        super(CreateTaskNotesPage, self).__init__(driver)
 
     def enter_notes_name(self, notes):
         self.find_element(*self.locator.enter_notes_input).clear()
@@ -17,6 +17,12 @@ class CreateTaskNotesPage(BasePage):
         self.wait_element(*self.locator.next_week_button)
         self.find_element(*self.locator.next_week_button).click()
     
+    def click_personal_option_button(self):
+        self.wait_element(*self.locator.personal_option_button)
+        self.find_element(*self.locator.personal_option_button).click()  
+    
+    
+                
     
    
 
